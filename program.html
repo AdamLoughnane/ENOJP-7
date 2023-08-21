@@ -64,13 +64,21 @@
   Conference Schedule<small><style="color: gray;">*</small>
 </h1>
 		
-	  <p>&nbsp;</p>
+		 <p>&nbsp;</p>
+		 
+		 <a class="scroll-link" href="#thursday-image">THURSDAY — </a>
+<a class="scroll-link" href="#friday-image">FRIDAY</a>
+<a class="scroll-link" href="#saturday-image">— SATURDAY</a>
+
+		 
+	  
 		
 		<p class="display-6">&nbsp;</p>
 	  
-			      <img src="images/programx3thurs.png" class="img-fluid" alt="Placeholder image" width="55%">
-		       <img src="images/programx3fri.png" class="img-fluid" alt="Placeholder image" width="55%">
-		       <img src="images/programx3sat.png" class="img-fluid" alt="Placeholder image" width="55%">
+			      <img id="thursday-image" src="images/programx3thurs.png" class="img-fluid" alt="Placeholder image" width="55%">
+					<img id="friday-image" src="images/programx3fri.png" class="img-fluid" alt="Placeholder image" width="55%">
+					<img id="saturday-image" src="images/programx3sat.png" class="img-fluid" alt="Placeholder image" width="55%">
+
 
 		
 	  <p>&nbsp;</p>
@@ -189,5 +197,29 @@
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
+		 
+		 
+		 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get all the scroll links
+    const scrollLinks = document.querySelectorAll(".scroll-link");
+
+    // Add click event listeners to the scroll links
+    scrollLinks.forEach(function(link) {
+      link.addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        const targetId = this.getAttribute("href"); // Get the target id from the href attribute
+        const targetElement = document.querySelector(targetId); // Get the target element
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" }); // Scroll to the target element
+        }
+      });
+    });
+  });
+</script>
+
+		 
+		 
+		 
   </body>
 </html>
